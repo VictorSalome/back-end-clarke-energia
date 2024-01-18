@@ -8,7 +8,10 @@ import './database'
 class App {
     constructor() {
         this.app = express()
-        this.app.use(cors())
+        this.app.use(cors({
+            origin: '*',
+            optionsSuccessStatus: 200,
+        }))
         this.middlewares()
         this.routes()
 
