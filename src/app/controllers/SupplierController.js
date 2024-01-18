@@ -25,7 +25,7 @@ class SupplierController {
     }
     async index(request, response) {
 
-        const kwh = new Number(request.query.kwh) || 0
+        const kwh = Number(request.query.kwh) || 0
         const suppliers = await Supplier.findAll({ where: { supplier_minkwh: { [Op.gte]: kwh } }, order: [['supplier_minkwh', 'DESC']] })
         console.log("suppliers", suppliers)
         return response.json(suppliers)
