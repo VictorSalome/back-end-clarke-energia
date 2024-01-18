@@ -11,6 +11,8 @@ class App {
         this.app.use(cors({
             origin: '*',
             optionsSuccessStatus: 200,
+            allowedHeaders: ['Content-Type', 'Authorization'],
+            credentials: true
         }))
         this.middlewares()
         this.routes()
