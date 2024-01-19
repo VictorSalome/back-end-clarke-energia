@@ -12,7 +12,8 @@ class App {
             origin: '*',
             optionsSuccessStatus: 200,
             allowedHeaders: ['Content-Type', 'Authorization'],
-            credentials: true
+            credentials: true,
+            
         }))
         this.middlewares()
         this.routes()
